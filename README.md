@@ -1,6 +1,20 @@
 # MIDI Host
 
-A small native macOS MIDI patchbay. The first MVP discovers CoreMIDI sources and destinations, connects selected inputs to outputs, forwards MIDI packets locally, and shows basic activity.
+A native macOS MIDI patchbay for routing hardware controllers to one or more synthesizers. It uses SwiftUI and CoreMIDI and is designed for a simple, visual hardware setup.
+
+## Features
+
+- Discovers connected CoreMIDI inputs and outputs.
+- Shows only the devices selected with the **Select input** and **Select output** controls.
+- Connects inputs to outputs by dragging a cable between the device cards.
+- Supports one-to-many routing, so a controller can feed multiple synthesizers.
+- Edits each output’s mapped inputs in an output popover.
+- Filters an input by MIDI channel and remaps it to a different output channel.
+- Shows route-specific MIDI activity at the cable endpoints.
+- Saves named routing presets, including selected devices and channel settings.
+- Loads a chosen startup preset when the app launches.
+- Supports renaming, overwriting, loading, and deleting presets.
+- Provides an emergency **STOP** command that sends All Notes Off, All Sound Off, Reset Controllers, MIDI Stop, and explicit Note Off messages to every detected output.
 
 ## Run
 
@@ -20,8 +34,18 @@ This creates `MIDIHost.app` in the project folder. You can double-click it in Fi
 
 The app targets macOS 11+ and uses only SwiftUI and CoreMIDI.
 
-## Next milestones
+## Basic workflow
 
-1. Add transpose and MIDI clock options per route.
-2. Save and restore named routing presets.
-3. Add a proper MIDI monitor and menu-bar mode.
+1. Connect the MIDI hardware and click **Refresh devices**.
+2. Use **Select input** and **Select output** to choose which devices appear on the main canvas.
+3. Drag an input card onto an output card to create a route.
+4. Click an output card to change the input and output MIDI channels for each mapping.
+5. Open **Presets** to save the setup, update an existing preset, rename it, or make it the startup preset.
+
+The current version intentionally focuses on hardware routing. Transpose, MIDI clock, a full MIDI monitor, and menu-bar mode are not implemented yet.
+
+## Project layout
+
+- `Sources/MIDIHost/MIDIHostApp.swift` — application and CoreMIDI routing logic.
+- `Resources/AppIcon.svg` and `Resources/MIDIHost.icns` — application icon assets.
+- `package_app.sh` — builds and signs the double-clickable app bundle for personal use.
