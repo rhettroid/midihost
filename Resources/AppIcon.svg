@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#080B12"/>
+    </linearGradient>
+    <linearGradient id="cable" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF9D4D"/>
+      <stop offset="0.5" stop-color="#C77DFF"/>
+      <stop offset="1" stop-color="#65D7FF"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="32" y="32" width="960" height="960" rx="214" fill="url(#bg)"/>
+  <path d="M214 354 C390 354 390 670 512 670 S634 354 810 354" fill="none" stroke="#65D7FF" stroke-opacity=".14" stroke-width="36"/>
+  <path d="M214 354 C390 354 390 670 512 670 S634 354 810 354" fill="none" stroke="url(#cable)" stroke-width="20" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M214 670 C390 670 390 354 512 354 S634 670 810 670" fill="none" stroke="#C77DFF" stroke-opacity=".22" stroke-width="28"/>
+  <path d="M214 670 C390 670 390 354 512 354 S634 670 810 670" fill="none" stroke="#C77DFF" stroke-width="13" stroke-linecap="round"/>
+  <g filter="url(#glow)">
+    <circle cx="214" cy="354" r="64" fill="#FF9D4D"/>
+    <circle cx="214" cy="670" r="64" fill="#C77DFF"/>
+    <circle cx="810" cy="354" r="64" fill="#65D7FF"/>
+    <circle cx="810" cy="670" r="64" fill="#65D7FF"/>
+  </g>
+  <g fill="#111827" stroke="#F6F8FF" stroke-width="8">
+    <circle cx="214" cy="354" r="27"/><circle cx="214" cy="670" r="27"/>
+    <circle cx="810" cy="354" r="27"/><circle cx="810" cy="670" r="27"/>
+  </g>
+  <circle cx="512" cy="512" r="24" fill="#F6F8FF" opacity=".9"/>
+</svg>
