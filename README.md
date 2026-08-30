@@ -54,4 +54,4 @@ The current version intentionally focuses on hardware routing. Transpose, MIDI c
 
 ## Release compatibility
 
-The downloadable app in the current release is built for Apple Silicon only. A future universal build can add Intel Mac support.
+The downloadable app in the current release is built for Apple Silicon only.
