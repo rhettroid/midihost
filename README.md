@@ -34,7 +34,7 @@ To create a double-clickable personal-use app bundle:
 
 This creates `MIDIHost.app` in the project folder. You can double-click it in Finder or drag it to `/Applications`.
 
-The app targets macOS 11+ and uses only SwiftUI and CoreMIDI.
+The app currently targets Apple Silicon Macs (`arm64`) running macOS 11 or later. It uses only SwiftUI and CoreMIDI. Intel Mac support is not included in the current build.
 
 ## Basic workflow
 
@@ -51,3 +51,7 @@ The current version intentionally focuses on hardware routing. Transpose, MIDI c
 - `Sources/MIDIHost/MIDIHostApp.swift` — application and CoreMIDI routing logic.
 - `Resources/AppIcon.svg` and `Resources/MIDIHost.icns` — application icon assets.
 - `package_app.sh` — builds and signs the double-clickable app bundle for personal use.
+
+## Release compatibility
+
+The downloadable app in the current release is built for Apple Silicon only. A future universal build can add Intel Mac support.
