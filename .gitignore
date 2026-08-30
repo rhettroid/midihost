@@ -3,3 +3,4 @@
 DerivedData/
 *.xcodeproj/xcuserdata/
 MIDIHost.app/
+MIDIHost-*.zip
