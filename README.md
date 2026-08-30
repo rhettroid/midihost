@@ -2,6 +2,8 @@
 
 A native macOS MIDI patchbay for routing hardware controllers to one or more synthesizers. It uses SwiftUI and CoreMIDI and is designed for a simple, visual hardware setup.
 
+![MIDI Host routing interface](Resources/MIDIHost-screenshot.png)
+
 ## Features
 
 - Discovers connected CoreMIDI inputs and outputs.
